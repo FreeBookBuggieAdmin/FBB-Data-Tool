@@ -17,7 +17,8 @@ import OrganizationsListPage from '../OrganizationsListPage/OrganizationsListPag
 import ContactsListPage from '../ContactsList/ContactsListPage';
 import NewEvent from '../NewEvent/NewEvent';
 import VolunteerEvent from '../VolunteerEvent/VolunteerEvent'
-import registerPage from '../RegisterPage/RegisterPage'
+import registerPage from '../RegisterPage/RegisterPage';
+import EditEvents from '../EditEvents/EditEvents';
 
 
 import './App.css';
@@ -86,6 +87,11 @@ class App extends Component {
               exact
               path="/VolunteerEvent"
               component={VolunteerEvent}
+            />
+            <ProtectedRoute
+              exact
+              path="/editEvents"
+              component={EditEvents}
             />
             <DataReporting
               exact

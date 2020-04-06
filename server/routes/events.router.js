@@ -4,7 +4,9 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const queryText = 'SELECT * FROM "events";'
+    const queryText = `SELECT * FROM "events"
+                      JOIN "organizations" on "events".organizations_id = "organizations".id
+                      JOIN "contacts" on "events".contacts_id = "contacts".id;`
     console.log('in events router.get', req.body)
     pool.query(queryText)
         .then(result => {

@@ -1,6 +1,7 @@
 let initialEvent = {
     event_name: '',
-    organizations_id: 0
+    organizations_id: 0,
+    date: '                 '
 }
 
 const events = (state = [initialEvent], action) => {
