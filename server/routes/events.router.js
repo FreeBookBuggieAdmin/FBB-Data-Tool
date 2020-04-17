@@ -36,4 +36,11 @@ router.post('/', (req, res) => {
       })
   })
 
+// edit existing event
+router.put('/editEvent', (req, res) => {
+  console.log('in editEvent, action.payload:', action.payload)
+  //const queryText = 
+
+})
+
 module.exports = router;

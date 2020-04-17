@@ -11,8 +11,15 @@ class EditEvents extends Component {
 
     componentDidMount() {
         this.props.dispatch({
-            type: 'GET_EVENTS',
+            type: 'GET_EVENTS'
         })
+        this.props.dispatch({
+            type: 'GET_ORGANIZATIONS'
+        })
+        this.props.dispatch({
+            type: 'GET_CONTACTS'
+        })
+        console.log(this.props.reduxStore)
     }
 
     render() {
@@ -33,6 +40,7 @@ class EditEvents extends Component {
                         <th>Location</th>
                         <th>Volunteers</th>
                         <th>Notes</th>
+                        <th></th>
                     </tr>
                     {this.props.reduxStore.events.map((event, i) => {
                         return <EventRow key={i} event={event}/>
