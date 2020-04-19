@@ -16,8 +16,9 @@ import NewOrganization from '../NewOrganization/NewOrganization';
 import OrganizationsListPage from '../OrganizationsListPage/OrganizationsListPage';
 import ContactsListPage from '../ContactsList/ContactsListPage';
 import NewEvent from '../NewEvent/NewEvent';
-import VolunteerEvent from '../VolunteerEvent/VolunteerEvent'
-import registerPage from '../RegisterPage/RegisterPage'
+import VolunteerEvent from '../VolunteerEvent/VolunteerEvent';
+import registerPage from '../RegisterPage/RegisterPage';
+import Nav from '../Nav/Nav';
 
 
 import './App.css';
@@ -33,7 +34,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          {/* <Nav /> */}
+          <Nav />
 
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}

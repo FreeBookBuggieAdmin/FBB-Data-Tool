@@ -10,7 +10,6 @@ import BackgroundImage from './HeaderBlueLight.png'
 const styles = {
     background: {
         backgroundImage: `url(${BackgroundImage})`,
-        // backgroundSize: 'covecontainr',
         backgroundRepeat: 'repeat',
         paddingLeft: '0',
         paddingRight: '0',
@@ -64,7 +63,6 @@ class ContactsListPage extends React.Component {
         }
         return (
             <div>
-                {/* <ContactListNav /> */}
                 <div className={this.props.classes.background}>
                     <Grid container
                         justify="center"

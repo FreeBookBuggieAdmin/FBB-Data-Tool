@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import VolunteerEventNav from './VolunteerEventNav';
+// import VolunteerEventNav from './VolunteerEventNav';
 import './VolunteerEvent.css';
 
 // Material UI imports
@@ -187,7 +187,7 @@ class volunteerEvent extends Component {
 
         return (
             <>
-                <VolunteerEventNav />
+                {/* <VolunteerEventNav /> */}
                 
                 <h1
                     className="new-event-styles"

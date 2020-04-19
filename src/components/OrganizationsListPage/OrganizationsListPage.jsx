@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Input from '@material-ui/core/Input';
 import OrganizationsListItem from '../OrganizationsListItem/OrganizationsListItem'
-import OrganizationListPageNav from '../OrganizationsListPage/OrganizationListPageNav'
+// import OrganizationListPageNav from '../OrganizationsListPage/OrganizationListPageNav'
 import { withStyles, Grid } from '@material-ui/core'
 import BackgroundImage from './HeaderPurpleLight.png'
 
@@ -77,7 +77,7 @@ class OrganizationsListPage extends React.Component {
         }
         return (
             <div>
-                <OrganizationListPageNav />
+                {/* <OrganizationListPageNav /> */}
                 <div className={this.props.classes.background}>
                     <Grid container
                         justify="center"

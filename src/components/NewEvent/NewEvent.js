@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import NewEventNav from './NewEventNav'
+// import Nav from '../Nav/Nav';
+// import NewEventNav from './NewEventNav'
 import './NewEventStyle.css';
 
 // Material UI imports
@@ -150,7 +151,7 @@ class NewEvent extends Component {
         return (
             <>
 
-                <NewEventNav />
+                {/* <Nav /> */}
                 <Grid className={this.props.classes.container}
 
                     container
