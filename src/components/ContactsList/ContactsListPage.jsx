@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Input from '@material-ui/core/Input';
 import ContactsListItem from '../ContactsListItem/ContactsListItem'
 import { withStyles, Grid } from '@material-ui/core';
-import ContactListNav from './ContactListNav';
+// import ContactListNav from './ContactListNav';
 import BackgroundImage from './HeaderBlueLight.png'
 
 
@@ -64,7 +64,7 @@ class ContactsListPage extends React.Component {
         }
         return (
             <div>
-                <ContactListNav />
+                {/* <ContactListNav /> */}
                 <div className={this.props.classes.background}>
                     <Grid container
                         justify="center"

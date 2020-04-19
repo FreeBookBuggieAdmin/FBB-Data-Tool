@@ -8,15 +8,15 @@ const Nav = (props) => (
   <div className="nav">
 
     <div className="nav-title-div">
-      
+
 
       <h2 className="nav-title">The Free Book Buggie</h2>
-      
+
       <div>
-      <img 
-      className="logo-image"
-      alt="book buggie logo"
-      src="https://thefreebookbuggie.org/wp-content/uploads/2018/08/cropped-logo.jpg"/> 
+        <img
+          className="logo-image"
+          alt="book buggie logo"
+          src="https://thefreebookbuggie.org/wp-content/uploads/2018/08/cropped-logo.jpg" />
       </div>
     </div>
 
@@ -30,12 +30,15 @@ const Nav = (props) => (
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
         <>
-          
+
           <Link className="nav-link" to="/DataReporting">
             Data Reporting
           </Link>
           <Link className="nav-link" to="/OrganizationsListPage">
             Organizations List
+          </Link>
+          <Link className="nav-link" to="/contactsListPage">
+            Contacts List
           </Link>
           <Link className="nav-link" to="/event">
             New Event
@@ -43,16 +46,9 @@ const Nav = (props) => (
           <Link className="nav-link" to="/neworganization">
             Add New Org
           </Link>
-          <Link className="nav-link" to="/contactsListPage">
-            Contacts List
-          </Link>
           <LogOutButton className="nav-link" />
         </>
       )}
-      {/* Always show this link since the about page is not protected */}
-      <Link className="nav-link" to="/about">
-        About
-      </Link>
     </div>
   </div>
 );
