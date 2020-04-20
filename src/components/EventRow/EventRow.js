@@ -17,10 +17,10 @@ class EventRow extends Component {
 
     handleSave = () => {
         console.log(this.state.event)
-        // dispatchEvent({
-        //     type: 'EDIT_EVENT',
-        //     payload: this.state.event
-        // })
+        dispatchEvent({
+            type: 'EDIT_EVENT',
+            payload: this.state.event
+        })
         this.setState({
             edit: false
         })
@@ -71,7 +71,7 @@ class EventRow extends Component {
     render() {
 
         let event = this.state.event
-
+        console.log('event:', event)
         if (this.state.edit) {
             return (
                 <>
