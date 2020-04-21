@@ -17,7 +17,7 @@ class EventRow extends Component {
 
     handleSave = () => {
         console.log(this.state.event)
-        dispatchEvent({
+        this.props.dispatch({
             type: 'EDIT_EVENT',
             payload: this.state.event
         })
@@ -71,7 +71,7 @@ class EventRow extends Component {
     render() {
 
         let event = this.state.event
-        console.log('event:', event)
+        //console.log('event:', event)
         if (this.state.edit) {
             return (
                 <>

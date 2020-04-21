@@ -26,7 +26,7 @@ class EditEvents extends Component {
 
         return(
             <>
-                <h1>edit events page</h1>
+                <h1>Edit Events</h1>
                 <table>
                     <thead>
                         <tr>
@@ -47,6 +47,7 @@ class EditEvents extends Component {
                     </thead>
                     <tbody>
                         {this.props.reduxStore.events.map((event, i) => {
+                            console.log(event)
                             return (
                                 <EventRow key={i} event={event}/>
                             )

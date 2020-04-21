@@ -4,7 +4,7 @@ let initialEvent = {
     date: '                 '
 }
 
-const events = (state = [initialEvent], action) => {
+const events = (state = [], action) => {
     if (action.type === 'SET_EVENTS') {
         return action.payload; 
     
