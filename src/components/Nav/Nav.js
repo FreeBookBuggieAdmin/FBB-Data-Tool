@@ -8,16 +8,13 @@ const Nav = (props) => (
   <div className="nav">
 
     <div className="nav-title-div">
-
-
       <h2 className="nav-title">The Free Book Buggie</h2>
-
-      <div>
-        <img
-          className="logo-image"
-          alt="book buggie logo"
-          src="https://thefreebookbuggie.org/wp-content/uploads/2018/08/cropped-logo.jpg" />
-      </div>
+        <div className="buggie-logo">
+          <img
+            className="logo-image"
+            alt="book buggie logo"
+            src="https://thefreebookbuggie.org/wp-content/uploads/2018/08/cropped-logo.jpg" />
+        </div>
     </div>
 
     <div className="nav-right">
