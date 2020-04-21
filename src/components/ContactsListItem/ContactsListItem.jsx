@@ -138,74 +138,71 @@ class ContactsListPageItem extends React.Component {
     render() {
         let contact = this.props.contact
         let displayRow
-
-        {
-            if (this.state.edit === false) {
-                displayRow = (
-                    <TableRow key={contact.id} className={this.props.classes.row}>
-                        <TableCell >{contact.contact_name}</TableCell>
-                        <TableCell >{contact.org_name}</TableCell>
-                        {contact.phone_number_type ?
-                            <TableCell >{contact.phone_number} ({contact.phone_number_type}) </TableCell> :
-                            <TableCell >{contact.phone_number}</TableCell>}
-                        <TableCell >{contact.email}</TableCell>
-                        <TableCell >{contact.notes}</TableCell>
-                        <TableCell><Button onClick={this.edit} variant="contained" size="small" color="primary">Edit</Button></TableCell>
-                        <TableCell><Button onClick={this.handleClickOpen} variant="contained" size="small" color="secondary">Delete</Button></TableCell>
-                        <Dialog
-                            open={this.state.setOpen}
-                            onClose={this.handleClose}
-                            aria-labelledby="alert-dialog-title"
-                            aria-describedby="alert-dialog-description"
-                        >
-                            <DialogTitle id="alert-dialog-title">{"Are you sure you wish to delete this contact?"}</DialogTitle>
-                            <DialogActions>
-                                <Button onClick={this.handleClose} color="primary">
-                                    No
+        if (this.state.edit === false) {
+            displayRow = (
+                <TableRow key={contact.id} className={this.props.classes.row}>
+                    <TableCell >{contact.contact_name}</TableCell>
+                    <TableCell >{contact.org_name}</TableCell>
+                    {contact.phone_number_type ?
+                        <TableCell >{contact.phone_number} ({contact.phone_number_type}) </TableCell> :
+                        <TableCell >{contact.phone_number}</TableCell>}
+                    <TableCell >{contact.email}</TableCell>
+                    <TableCell >{contact.notes}</TableCell>
+                    <TableCell><Button onClick={this.edit} variant="contained" size="small" color="primary">Edit</Button></TableCell>
+                    <TableCell><Button onClick={this.handleClickOpen} variant="contained" size="small" color="secondary">Delete</Button></TableCell>
+                    <Dialog
+                        open={this.state.setOpen}
+                        onClose={this.handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title">{"Are you sure you wish to delete this contact?"}</DialogTitle>
+                        <DialogActions>
+                            <Button onClick={this.handleClose} color="primary">
+                                No
                                 </Button>
-                                <Button onClick={this.delete} color="primary" autoFocus>
-                                    Yes
+                            <Button onClick={this.delete} color="primary" autoFocus>
+                                Yes
                                 </Button>
-                            </DialogActions>
-                        </Dialog>
-                    </TableRow >
-                )
-            } else {
-                displayRow = (
-                    <TableRow key={contact.id} className={this.props.classes.row}>
-                        <TableCell ><Input
-                            value={this.state.contact.contact_name}
-                            onChange={(event) => this.setDetails(event, 'contact_name')}
-                        ></Input></TableCell>
-                        <TableCell ><Input
-                            value={this.state.contact.org_name}
-                            onChange={(event) => this.setDetails(event, 'org_name')}
-                        ></Input></TableCell>
-                        <TableCell ><Input
-                            value={this.state.contact.phone_number}
-                            onChange={(event) => this.setDetails(event, 'phone_number')}
-                            placeholder="number"
-                        ></Input><Input
-                            value={this.state.contact.phone_number_type}
-                            onChange={(event) => this.setDetails(event, 'phone_number_type')}
-                            placeholder="number type"
-                        ></Input></TableCell>
-                        <TableCell ><Input
-                            value={this.state.contact.email}
-                            onChange={(event) => this.setDetails(event, 'email')}
-                            placeholder="email"
-                        ></Input></TableCell>
-                        <TableCell ><Input
-                            value={this.state.contact.notes}
-                            onChange={(event) => this.setDetails(event, 'notes')}
-                            placeholder="notes"
-                        ></Input></TableCell>
-                        <TableCell><Button onClick={this.saveContact} variant="contained" size="small" color="primary">Save</Button></TableCell>
-                        <TableCell><Button onClick={this.edit} variant="contained" size="small" color="secondary">Cancel</Button></TableCell>
+                        </DialogActions>
+                    </Dialog>
+                </TableRow >
+            )
+        } else {
+            displayRow = (
+                <TableRow key={contact.id} className={this.props.classes.row}>
+                    <TableCell ><Input
+                        value={this.state.contact.contact_name}
+                        onChange={(event) => this.setDetails(event, 'contact_name')}
+                    ></Input></TableCell>
+                    <TableCell ><Input
+                        value={this.state.contact.org_name}
+                        onChange={(event) => this.setDetails(event, 'org_name')}
+                    ></Input></TableCell>
+                    <TableCell ><Input
+                        value={this.state.contact.phone_number}
+                        onChange={(event) => this.setDetails(event, 'phone_number')}
+                        placeholder="number"
+                    ></Input><Input
+                        value={this.state.contact.phone_number_type}
+                        onChange={(event) => this.setDetails(event, 'phone_number_type')}
+                        placeholder="number type"
+                    ></Input></TableCell>
+                    <TableCell ><Input
+                        value={this.state.contact.email}
+                        onChange={(event) => this.setDetails(event, 'email')}
+                        placeholder="email"
+                    ></Input></TableCell>
+                    <TableCell ><Input
+                        value={this.state.contact.notes}
+                        onChange={(event) => this.setDetails(event, 'notes')}
+                        placeholder="notes"
+                    ></Input></TableCell>
+                    <TableCell><Button onClick={this.saveContact} variant="contained" size="small" color="primary">Save</Button></TableCell>
+                    <TableCell><Button onClick={this.edit} variant="contained" size="small" color="secondary">Cancel</Button></TableCell>
 
-                    </TableRow >
-                )
-            }
+                </TableRow >
+            )
         }
         return (
             <>

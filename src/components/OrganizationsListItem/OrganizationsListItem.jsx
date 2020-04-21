@@ -180,171 +180,167 @@ class OrganizationsListPageItem extends React.Component {
     render() {
         let org = this.props.org
         let displayRow
-
-        {
-            if (this.state.edit === false) {
-                displayRow = (
-                    <TableRow key={org.id} className={this.props.classes.row}>
-                        <TableCell colSpan={2}>{org.org_name}</TableCell>
-                        <TableCell >{org.address_number} {org.address_street} {org.address_unit}</TableCell>
-                        <TableCell >{org.city}</TableCell>
-                        <TableCell >{org.state}</TableCell>
-                        <TableCell >{org.zip}</TableCell>
-                        <TableCell >{org.county_name}</TableCell>
-                        <TableCell >{org.notes}</TableCell>
-                        <TableCell><Button onClick={this.edit} variant="contained" size="small" color="primary">Edit</Button></TableCell>
-                        <TableCell><Button onClick={this.handleClickOpen} variant="contained" size="small" color="secondary">Delete</Button></TableCell>
-                        <Dialog
-                            open={this.state.setOpen}
-                            onClose={this.handleClose}
-                            aria-labelledby="alert-dialog-title"
-                            aria-describedby="alert-dialog-description"
-                        >
-                            <DialogTitle id="alert-dialog-title">{"Are you sure you wish to delete this organization?"}</DialogTitle>
-                            <DialogActions>
-                                <Button onClick={this.handleClose} color="primary">
-                                    No
+        if (this.state.edit === false) {
+            displayRow = (
+                <TableRow key={org.id} className={this.props.classes.row}>
+                    <TableCell colSpan={2}>{org.org_name}</TableCell>
+                    <TableCell >{org.address_number} {org.address_street} {org.address_unit}</TableCell>
+                    <TableCell >{org.city}</TableCell>
+                    <TableCell >{org.state}</TableCell>
+                    <TableCell >{org.zip}</TableCell>
+                    <TableCell >{org.county_name}</TableCell>
+                    <TableCell >{org.notes}</TableCell>
+                    <TableCell><Button onClick={this.edit} variant="contained" size="small" color="primary">Edit</Button></TableCell>
+                    <TableCell><Button onClick={this.handleClickOpen} variant="contained" size="small" color="secondary">Delete</Button></TableCell>
+                    <Dialog
+                        open={this.state.setOpen}
+                        onClose={this.handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title">{"Are you sure you wish to delete this organization?"}</DialogTitle>
+                        <DialogActions>
+                            <Button onClick={this.handleClose} color="primary">
+                                No
                                 </Button>
-                                <Button onClick={this.delete} color="primary" autoFocus>
-                                    Yes
+                            <Button onClick={this.delete} color="primary" autoFocus>
+                                Yes
                                 </Button>
-                            </DialogActions>
-                        </Dialog>
+                        </DialogActions>
+                    </Dialog>
+                </TableRow >
+            )
+        } else {
+            displayRow = (
+                <>
+                    < TableRow key={org.id} className={this.props.classes.row} >
+                        <TableCell colSpan={2}>
+                            <Input
+                                value={this.state.address.org_name}
+                                onChange={(event) => this.setDetailsAddress(event, 'name')}
+                            ></Input></TableCell>
+                        <TableCell style={{ fontSize: '18px', width: '200px' }}><Input
+                            value={this.state.address.address_number}
+                            onChange={(event) => this.setDetailsAddress(event, 'address_number')}
+                        ></Input><Input
+                            value={this.state.address.address_street}
+                            onChange={(event) => this.setDetailsAddress(event, 'address_street')}
+                        ></Input><Input
+                            value={this.state.address.address_unit}
+                            onChange={(event) => this.setDetailsAddress(event, 'address_unit')}
+                        ></Input></TableCell>
+                        <TableCell style={{ fontSize: '18px', width: '50px' }}><Input
+                            value={this.state.address.city}
+                            onChange={(event) => this.setDetailsAddress(event, 'city')}
+                        ></Input></TableCell>
+                        <TableCell style={{ fontSize: '18px', maxWidth: '20px' }}><Input
+                            value={this.state.address.state}
+                            onChange={(event) => this.setDetailsAddress(event, 'state')}
+                        ></Input></TableCell>
+                        <TableCell style={{ fontSize: '18px' }}><Input
+                            value={this.state.address.zip}
+                            onChange={(event) => this.setDetailsAddress(event, 'zip')}
+                        ></Input></TableCell>
+                        <TableCell style={{ fontSize: '18px' }}>
+                            <FormControl >
+                                <Select
+                                    defaultValue={this.state.address.county_id}
+                                    native
+                                    onChange={(event) => this.setDetailsAddress(event, 'county_id')}>
+                                    {this.props.reduxStore.counties.map(county =>
+                                        <option key={county.county_id} value={county.county_id} className={this.props.classes.dropdownMenu}>{county.county_name}</option>
+                                    )}
+                                </Select>
+                            </FormControl>
+                        </TableCell>
+                        <TableCell style={{ fontSize: '18px' }}><Input
+                            value={this.state.address.org_notes}
+                            onChange={(event) => this.setDetailsAddress(event, 'org_notes')}
+                        ></Input></TableCell>
+                        <TableCell><Button onClick={this.saveOrg} variant="contained" size="small" color="primary">Save</Button></TableCell>
+                        <TableCell><Button onClick={this.edit} variant="contained" size="small" color="secondary">Cancel</Button></TableCell>
                     </TableRow >
-                )
-            } else {
-                displayRow = (
-                    <>
-                        < TableRow key={org.id} className={this.props.classes.row} >
-                            <TableCell colSpan={2}>
-                                <Input
-                                    value={this.state.address.org_name}
-                                    onChange={(event) => this.setDetailsAddress(event, 'name')}
-                                ></Input></TableCell>
-                            <TableCell style={{ fontSize: '18px', width: '200px' }}><Input
-                                value={this.state.address.address_number}
-                                onChange={(event) => this.setDetailsAddress(event, 'address_number')}
-                            ></Input><Input
-                                value={this.state.address.address_street}
-                                onChange={(event) => this.setDetailsAddress(event, 'address_street')}
-                            ></Input><Input
-                                value={this.state.address.address_unit}
-                                onChange={(event) => this.setDetailsAddress(event, 'address_unit')}
-                            ></Input></TableCell>
-                            <TableCell style={{ fontSize: '18px', width: '50px' }}><Input
-                                value={this.state.address.city}
-                                onChange={(event) => this.setDetailsAddress(event, 'city')}
-                            ></Input></TableCell>
-                            <TableCell style={{ fontSize: '18px', maxWidth: '20px' }}><Input
-                                value={this.state.address.state}
-                                onChange={(event) => this.setDetailsAddress(event, 'state')}
-                            ></Input></TableCell>
-                            <TableCell style={{ fontSize: '18px' }}><Input
-                                value={this.state.address.zip}
-                                onChange={(event) => this.setDetailsAddress(event, 'zip')}
-                            ></Input></TableCell>
-                            <TableCell style={{ fontSize: '18px' }}>
-                                <FormControl >
-                                    <Select
-                                        defaultValue={this.state.address.county_id}
-                                        native
-                                        onChange={(event) => this.setDetailsAddress(event, 'county_id')}>
-                                        {this.props.reduxStore.counties.map(county =>
-                                            <option key={county.county_id} value={county.county_id} className={this.props.classes.dropdownMenu}>{county.county_name}</option>
-                                        )}
-                                    </Select>
-                                </FormControl>
-                            </TableCell>
-                            <TableCell style={{ fontSize: '18px' }}><Input
-                                value={this.state.address.org_notes}
-                                onChange={(event) => this.setDetailsAddress(event, 'org_notes')}
-                            ></Input></TableCell>
-                            <TableCell><Button onClick={this.saveOrg} variant="contained" size="small" color="primary">Save</Button></TableCell>
-                            <TableCell><Button onClick={this.edit} variant="contained" size="small" color="secondary">Cancel</Button></TableCell>
-                        </TableRow >
-                        <TableRow style={{ width: "auto", tableLayout: 'auto' }}>
-                            <TableCell style={{ width: '10%' }}>Ages: 0-3</TableCell>
-                            <TableCell style={{ width: '10%' }}>Ages: 4-7</TableCell>
-                            <TableCell style={{ width: '10%' }}>Ages: 8-12</TableCell>
-                            <TableCell style={{ width: '10%' }}>Ages: 13-18</TableCell>
-                            <TableCell style={{ width: '10%' }}>White</TableCell>
-                            <TableCell style={{ width: '10%' }}>Black</TableCell>
-                            <TableCell style={{ width: '10%' }}>Native</TableCell>
-                            <TableCell style={{ width: '10%' }}>Asian</TableCell>
-                            <TableCell style={{ width: '10%' }}>Hawaiian</TableCell>
-                            <TableCell style={{ width: '10%' }}>NSLP</TableCell>
-                        </TableRow>
-                        <TableRow >
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                value={this.state.demographics.age_0_3}
-                                onChange={(event) => this.setDetailsDemographics(event, 'age_0_3')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                value={this.state.demographics.age_4_7}
-                                onChange={(event) => this.setDetailsDemographics(event, 'age_4_7')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                value={this.state.demographics.age_8_12}
-                                onChange={(event) => this.setDetailsDemographics(event, 'age_8_12')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                value={this.state.demographics.age_13_18}
-                                onChange={(event) => this.setDetailsDemographics(event, 'age_13_18')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                value={this.state.demographics.white}
-                                onChange={(event) => this.setDetailsDemographics(event, 'white')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                value={this.state.demographics.black_or_african_american}
-                                onChange={(event) => this.setDetailsDemographics(event, 'black_or_african_american')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                label={"Demographics Ages 0-3"}
-                                value={this.state.demographics.asian}
-                                onChange={(event) => this.setDetailsDemographics(event, 'asian')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                label={"Demographics Ages 0-3"}
-                                value={this.state.demographics.american_indian_or_alaska_native}
-                                onChange={(event) => this.setDetailsDemographics(event, 'american_indian_or_alaska_native')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                label={"Demographics Ages 0-3"}
-                                value={this.state.demographics.native_hawaiian_or_pacific_islander}
-                                onChange={(event) => this.setDetailsDemographics(event, 'native_hawaiian_or_pacific_islander')}
-                            >
-                            </Input>%</TableCell>
-                            <TableCell><Input
-                                className={this.props.classes.smallInput}
-                                label={"Demographics Ages 0-3"}
-                                value={this.state.demographics.percentage_NSLP}
-                                onChange={(event) => this.setDetailsDemographics(event, 'percentage_NSLP')}
-                            >
-                            </Input>%</TableCell>
-                        </TableRow>
-                    </>
-                )
-            }
+                    <TableRow style={{ width: "auto", tableLayout: 'auto' }}>
+                        <TableCell style={{ width: '10%' }}>Ages: 0-3</TableCell>
+                        <TableCell style={{ width: '10%' }}>Ages: 4-7</TableCell>
+                        <TableCell style={{ width: '10%' }}>Ages: 8-12</TableCell>
+                        <TableCell style={{ width: '10%' }}>Ages: 13-18</TableCell>
+                        <TableCell style={{ width: '10%' }}>White</TableCell>
+                        <TableCell style={{ width: '10%' }}>Black</TableCell>
+                        <TableCell style={{ width: '10%' }}>Native</TableCell>
+                        <TableCell style={{ width: '10%' }}>Asian</TableCell>
+                        <TableCell style={{ width: '10%' }}>Hawaiian</TableCell>
+                        <TableCell style={{ width: '10%' }}>NSLP</TableCell>
+                    </TableRow>
+                    <TableRow >
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            value={this.state.demographics.age_0_3}
+                            onChange={(event) => this.setDetailsDemographics(event, 'age_0_3')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            value={this.state.demographics.age_4_7}
+                            onChange={(event) => this.setDetailsDemographics(event, 'age_4_7')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            value={this.state.demographics.age_8_12}
+                            onChange={(event) => this.setDetailsDemographics(event, 'age_8_12')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            value={this.state.demographics.age_13_18}
+                            onChange={(event) => this.setDetailsDemographics(event, 'age_13_18')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            value={this.state.demographics.white}
+                            onChange={(event) => this.setDetailsDemographics(event, 'white')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            value={this.state.demographics.black_or_african_american}
+                            onChange={(event) => this.setDetailsDemographics(event, 'black_or_african_american')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            label={"Demographics Ages 0-3"}
+                            value={this.state.demographics.asian}
+                            onChange={(event) => this.setDetailsDemographics(event, 'asian')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            label={"Demographics Ages 0-3"}
+                            value={this.state.demographics.american_indian_or_alaska_native}
+                            onChange={(event) => this.setDetailsDemographics(event, 'american_indian_or_alaska_native')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            label={"Demographics Ages 0-3"}
+                            value={this.state.demographics.native_hawaiian_or_pacific_islander}
+                            onChange={(event) => this.setDetailsDemographics(event, 'native_hawaiian_or_pacific_islander')}
+                        >
+                        </Input>%</TableCell>
+                        <TableCell><Input
+                            className={this.props.classes.smallInput}
+                            label={"Demographics Ages 0-3"}
+                            value={this.state.demographics.percentage_NSLP}
+                            onChange={(event) => this.setDetailsDemographics(event, 'percentage_NSLP')}
+                        >
+                        </Input>%</TableCell>
+                    </TableRow>
+                </>
+            )
         }
-
         return (
             <>
                 {displayRow}
