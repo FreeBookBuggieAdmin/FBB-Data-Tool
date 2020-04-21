@@ -4,12 +4,12 @@ import Input from '@material-ui/core/Input';
 import ContactsListItem from '../ContactsListItem/ContactsListItem'
 import { withStyles, Grid } from '@material-ui/core';
 // import ContactListNav from './ContactListNav';
-import BackgroundImage from './HeaderBlueLight.png'
+// import BackgroundImage from './HeaderBlueLight.png'
 
 
 const styles = {
     background: {
-        backgroundImage: `url(${BackgroundImage})`,
+        // backgroundImage: `url(${BackgroundImage})`,
         backgroundRepeat: 'repeat',
         paddingLeft: '0',
         paddingRight: '0',
@@ -62,7 +62,7 @@ class ContactsListPage extends React.Component {
             )
         }
         return (
-            <div>
+            <div className="content">
                 <div className={this.props.classes.background}>
                     <Grid container
                         justify="center"
