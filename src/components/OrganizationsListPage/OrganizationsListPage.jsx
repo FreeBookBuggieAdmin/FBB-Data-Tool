@@ -77,7 +77,6 @@ class OrganizationsListPage extends React.Component {
         }
         return (
             <div className="org-list-page">
-                {/* <OrganizationListPageNav /> */}
                 <div className="org-list-page-bg"></div>
                     <Grid container
                         justify="center"

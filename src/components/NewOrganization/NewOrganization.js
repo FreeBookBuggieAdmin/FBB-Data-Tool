@@ -184,7 +184,8 @@ class NewOrganization extends Component {
     render() {
         let org = this.state.newEntry
         return (
-            <>
+            <div className="org-list-page">
+                <div className="org-list-page-bg"></div>
                 {/* <NewOrganizationNav /> */}
                 <Grid className={this.props.classes.container}
                     container
@@ -451,10 +452,8 @@ class NewOrganization extends Component {
                         Add
                     </Button>
                     <br />
-
                 </Grid>
-
-            </>
+            </div>
         )
     }
 }
