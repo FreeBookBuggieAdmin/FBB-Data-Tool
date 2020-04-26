@@ -62,7 +62,7 @@ class ContactsListPage extends React.Component {
             )
         }
         return (
-            <div className="content">
+            <div className="contact-list-page">
                 <div className={this.props.classes.background}>
                     <Grid container
                         justify="center"

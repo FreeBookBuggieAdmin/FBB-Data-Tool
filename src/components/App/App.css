@@ -4,6 +4,9 @@ body {
     background-attachment: fixed;
 }
 
+.contact-list-page {
+  background-image: url('/public/BackgroundColors/HeaderBlue.png');
+}
 
 .alert {
     background-color: #ff4545;
@@ -187,4 +190,13 @@ input {
 
 .registrationDiv {
   background-color: white;
+}
+
+.welcome-message-div {
+  text-align: center;
+}
+
+.volunteer-button-div{
+  margin-top: 20px;
+  margin-left: -30px;
 }
