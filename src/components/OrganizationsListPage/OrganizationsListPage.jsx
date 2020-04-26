@@ -4,20 +4,20 @@ import Input from '@material-ui/core/Input';
 import OrganizationsListItem from '../OrganizationsListItem/OrganizationsListItem'
 // import OrganizationListPageNav from '../OrganizationsListPage/OrganizationListPageNav'
 import { withStyles, Grid } from '@material-ui/core'
-import BackgroundImage from './HeaderPurpleLight.png'
+
 
 
 
 const styles = {
-    background: {
-        backgroundImage: `url(${BackgroundImage})`,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'repeat',
-        backgroundPosition: '100% 100%',
-        paddingLeft: '0',
-        paddingRight: '0',
-        width: '100%'
-    },
+    // background: {
+    //     backgroundImage: `url(${BackgroundImage})`,
+    //     backgroundSize: 'contain',
+    //     backgroundRepeat: 'repeat',
+    //     backgroundPosition: '100% 100%',
+    //     paddingLeft: '0',
+    //     paddingRight: '0',
+    //     width: '100%'
+    // },
     searchBar: {
         paddingTop: '50px',
         textSize: '36px',
@@ -78,7 +78,7 @@ class OrganizationsListPage extends React.Component {
         return (
             <div>
                 {/* <OrganizationListPageNav /> */}
-                <div className={this.props.classes.background}>
+                <div className="Org-List-Page">
                     <Grid container
                         justify="center"
                         alignItems="center"

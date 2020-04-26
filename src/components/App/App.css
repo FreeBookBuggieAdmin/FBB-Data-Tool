@@ -5,7 +5,13 @@ body {
 }
 
 .contact-list-page {
-  background-image: url('/public/BackgroundColors/HeaderBlue.png');
+  background-image: url('./HeaderBlue.png');
+  opacity: 78%;
+}
+
+.Org-List-Page {
+  background-image: url("./HeaderPurple.png");
+  opacity: 78%;
 }
 
 .alert {
@@ -200,3 +206,4 @@ input {
   margin-top: 20px;
   margin-left: -30px;
 }
+
