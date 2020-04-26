@@ -76,9 +76,9 @@ class OrganizationsListPage extends React.Component {
             )
         }
         return (
-            <div>
+            <div className="org-list-page">
                 {/* <OrganizationListPageNav /> */}
-                <div className="Org-List-Page">
+                <div className="org-list-page-bg"></div>
                     <Grid container
                         justify="center"
                         alignItems="center"
@@ -99,7 +99,7 @@ class OrganizationsListPage extends React.Component {
                 >
                     {displayList}
                 </Grid>
-                </div>
+                
             </div>
         )
     }

@@ -9,9 +9,21 @@ body {
   opacity: 78%;
 }
 
-.Org-List-Page {
-  background-image: url("./HeaderPurple.png");
-  opacity: 78%;
+.org-list-page {
+  position: relative;
+  z-index: 1;
+}
+
+.org-list-page .org-list-page-bg {
+  background: url('./HeaderPurple.png');
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: round;
 }
 
 .alert {
