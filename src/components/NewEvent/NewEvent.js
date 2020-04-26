@@ -149,9 +149,8 @@ class NewEvent extends Component {
         );
 
         return (
-            <>
-
-                {/* <Nav /> */}
+            <div className="new-event-page">
+                <div className="new-event-page-bg"></div>
                 <Grid className={this.props.classes.container}
 
                     container
@@ -300,7 +299,7 @@ class NewEvent extends Component {
                         </Paper>
                     </Grid>
                 </Grid>
-            </>
+            </div>
         )
     }
 }

@@ -8,13 +8,13 @@ import { withStyles, Grid } from '@material-ui/core';
 
 
 const styles = {
-    background: {
-        // backgroundImage: `url(${BackgroundImage})`,
-        backgroundRepeat: 'repeat',
-        paddingLeft: '0',
-        paddingRight: '0',
-        width: '100%'
-    },
+    // background: {
+    //     backgroundImage: `url(${BackgroundImage})`,
+    //     backgroundRepeat: 'repeat',
+    //     paddingLeft: '0',
+    //     paddingRight: '0',
+    //     width: '100%'
+    // },
     searchBar: {
         paddingTop: '50px',
         textSize: '36px'
@@ -63,7 +63,7 @@ class ContactsListPage extends React.Component {
         }
         return (
             <div className="contact-list-page">
-                <div className={this.props.classes.background}>
+                <div className="contact-list-page-bg"> </div>
                     <Grid container
                         justify="center"
                         alignItems="center"
@@ -83,7 +83,7 @@ class ContactsListPage extends React.Component {
                         alignItems="center">
                         {displayList}
                     </Grid>
-                </div>
+                
             </div>
         )
     }

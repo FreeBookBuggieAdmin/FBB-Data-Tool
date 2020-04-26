@@ -14,9 +14,9 @@
   width: 33%;
 }
 
-.buggie-logo{
-  padding-top: -500px;
-}
+/* .buggie-logo{
+  padding-top: -100px;
+} */
 
 .nav-title-div {
   text-align: center;
@@ -32,8 +32,8 @@
   background-size: cover;
   justify-content: flex-end;
   align-items: flex-end;
-  /* max-height: 275px; */
-  border-bottom: 300px white;
+  max-height: 300px;
+  /* border-bottom: 300px white; */
 }
 
 /* .nav::after {
@@ -61,8 +61,6 @@
   font-size: 20px;
   justify-content: flex-end;
   align-items: flex-end;
-
-
   /* these last two make the logout button in
   the nav bar look like another link */
   border: none;
@@ -80,7 +78,7 @@
 }
 
 .nav-right {
-  padding-top: 30px;
+  padding-top: 10px;
   float: right;
   justify-content: flex-end;
   align-items: flex-end;

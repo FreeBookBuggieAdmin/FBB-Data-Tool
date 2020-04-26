@@ -141,7 +141,7 @@ class DataReporting extends Component {
             )
         } else {
             return (
-                <>
+                <div className="data-reporting-page">
                     <div>
                         <h1 className="data-reporting-styles" >Craft Your Story</h1>
                     </div>
@@ -219,7 +219,7 @@ class DataReporting extends Component {
                             }}
                         />
                     </div>
-                </>
+                </div>
             )
         }
     }
