@@ -1,52 +1,54 @@
-# Prime Project
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+![MIT LICENSE](https://img.shields.io/github/license/scottbromander/the_marketplace.svg?style=flat-square)
+![REPO SIZE](https://img.shields.io/github/repo-size/scottbromander/the_marketplace.svg?style=flat-square)
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/scottbromander/the_marketplace.svg?style=flat-square)
+![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
 
-## Download (Don't Clone) This Repository
+# The Free Book Buggie Data Tool
 
-* Don't Fork or Clone. Instead, click the `Clone or Download` button and select `Download Zip`.
-* Unzip the project and start with the code in that folder.
-* Create a new GitHub project and push this code to the new repository.
+## Description
 
-## Prerequisites
+_Duration: 2 week sprint_
 
-Before you get started, make sure you have the following software installed on your computer:
+The Free Book Buggie Data Tool is a web app made for The Free Book Buggie, a nonprofit organization based out of the Twin Cities that collects used children’s books before they end up in landfills and distributes them to underserved communities. 
 
-- [Node.js](https://nodejs.org/en/)
-- [PostrgeSQL](https://www.postgresql.org/)
-- [Nodemon](https://nodemon.io/)
+The purpose of the website is to record data on the organization’s collecting and distribution of books and children served. Combined with demographics information of the children, this data can then be presented in many ways to facilitate the solicitation of donations or assist in grant writing.
 
-## Create database and table
+To see the fully functional site, please visit: https://the-free-book-buggie.herokuapp.com/
 
-Create a new database called `prime_app` and create a `user` table:
+## Screen Shot
 
-```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
-```
+<image src="documentation/images/Screen Shot 2020-04-05 at 9.16.27 PM.png" width=1000>
+<image src="documentation/images/Screen Shot 2020-04-05 at 9.50.10 PM.png" width=1000>
+	
+## Installation
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
+Before getting started, make sure you have the following software installed on your computer:
+[Node.js](https://nodejs.org/en/)
+[PostgreSQL](https://www.postgresql.org/)
+[Nodemon](https://nodemon.io/)
+Create a new database named `free_book_buggie`
+Run the queries that are stored in the `database.sql` file to populate the tables and insert the values you’ll need. The project is built on [Postgres](https://www.postgresql.org/download/) so you will need to make sure to have that installed. [Postico](https://eggerapps.at/postico/) is recommended for running the queries.
+In your terminal navigate to this project and `run npm install` to install all of the necessary dependencies.
+Run `npm run server` to start the server
+Run `npm run client` to start the server and open a new browser window.
 
-## Development Setup Instructions
+## Usage 
 
-* Run `npm install`
-* Create a `.env` file at the root of the project and paste this line into the file:
-    ```
-    SERVER_SESSION_SECRET=superDuperSecret
-    ```
-    While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
-* Start postgres if not running already by using `brew services start postgresql`
-* Run `npm run server`
-* Run `npm run client`
-* Navigate to `localhost:3000`
+Login to begin (the default username and password for development is:
+username: admin
+password: admin
+To register a new user, click on register volunteer. Note, this does not log the current registered user out, this simply creates a new user. The idea of this is the admin should be the only person with the ability to register new users to the app. This is to ensure only trusted volunteers of the Free Book Buggie have access to the data.
+User clicks on Organizations List or Contacts List to see all of the Organizations and Contacts the Free Book Buggie has in its database. These contact cards can be edited by clicking on the text. 
+User clicks on “add new org” to create new organization, entering address and demographics information. 
+User clicks on “add new event” to create a new event for the future. For future events the fields of “books collected”, “books distributed” and “number of children” can be left blank. If the user has an event that wasn’t made ahead of time users can enter in the values of those fields. 
+The mobile recording button on the home screen allows a volunteer to record the number of books collected, distributed and number of kids served for an already created event. 
 
-## Debugging
+## Built With
+	React.js, Redux, Material-UI, Chart.js, Axios, Node.js, Express, PG, and PostgreSQL.
 
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
+## Acknowledgement
+Thanks to Prime Digital Academy for their support during the project, and The Free Book Buggie for their work and inspiration. 
 
 ![VSCode Toolbar](documentation/images/vscode-toolbar.png)
 
@@ -109,3 +111,9 @@ This code is also heavily commented. We recommend reading through the comments, 
 1. Create the necessary tables
 1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
 1. In the deploy section, select manual deploy
+## Support
+	You can reach out to the four developers of this project with any questions:
+	-	Peter DeMaio: pedemaio@gmail.com
+	- 	Nic Payne: nicpaynedev@gmail.com
+	- 	Russel Kerber: russell.kerber@gmail.com
+	- 	Andy McElligott: andymc2315@gmail.com
