@@ -111,9 +111,17 @@ This code is also heavily commented. We recommend reading through the comments, 
 1. Create the necessary tables
 1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
 1. In the deploy section, select manual deploy
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 798611df4a252820025920998acab6602d620f8c
 ## Support
 	You can reach out to the four developers of this project with any questions:
 	-	Peter DeMaio: pedemaio@gmail.com
 	- 	Nic Payne: nicpaynedev@gmail.com
 	- 	Russel Kerber: russell.kerber@gmail.com
 	- 	Andy McElligott: andymc2315@gmail.com
+<<<<<<< HEAD
+=======
+
+>>>>>>> 798611df4a252820025920998acab6602d620f8c

@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Input from '@material-ui/core/Input';
 import OrganizationsListItem from '../OrganizationsListItem/OrganizationsListItem'
-import OrganizationListPageNav from '../OrganizationsListPage/OrganizationListPageNav'
+// import OrganizationListPageNav from '../OrganizationsListPage/OrganizationListPageNav'
 import { withStyles, Grid } from '@material-ui/core'
+
 import BackgroundImage from './HeaderPurpleLight.png'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -11,17 +12,16 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-
 const styles = {
-    background: {
-        backgroundImage: `url(${BackgroundImage})`,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'repeat',
-        backgroundPosition: '100% 100%',
-        paddingLeft: '0',
-        paddingRight: '0',
-        width: '100%'
-    },
+    // background: {
+    //     backgroundImage: `url(${BackgroundImage})`,
+    //     backgroundSize: 'contain',
+    //     backgroundRepeat: 'repeat',
+    //     backgroundPosition: '100% 100%',
+    //     paddingLeft: '0',
+    //     paddingRight: '0',
+    //     width: '100%'
+    // },
     searchBar: {
         paddingTop: '50px',
         textSize: '36px',
@@ -83,9 +83,8 @@ class OrganizationsListPage extends React.Component {
             )
         }
         return (
-            <div>
-                <OrganizationListPageNav />
-                <div className={this.props.classes.background}>
+            <div className="org-list-page">
+                <div className="org-list-page-bg"></div>
                     <Grid container
                         justify="center"
                         alignItems="center"
@@ -99,6 +98,15 @@ class OrganizationsListPage extends React.Component {
                             value={this.state.searchQuery}>
                         </Input>
                     </Grid>
+
+                <Grid container
+                    className={this.props.classes.list}
+                    direction="column"
+                    justify="space-evenly"
+                    alignItems="center"
+                >
+                    {displayList}
+                </Grid>
                     <Table size="small" aria-label="organization table" className={this.props.classes.table}
                         fixedHeader={false} style={{ width: "auto", tableLayout: 'auto' }}>
                         <TableHead>

@@ -4,6 +4,20 @@ import Input from '@material-ui/core/Input';
 import ContactsListItem from '../ContactsListItem/ContactsListItem';
 import ContactsListPageNav from '../ContactsList/ContactListNav';
 import { withStyles, Grid } from '@material-ui/core';
+
+// import ContactListNav from './ContactListNav';
+// import BackgroundImage from './HeaderBlueLight.png'
+
+
+const styles = {
+    // background: {
+    //     backgroundImage: `url(${BackgroundImage})`,
+    //     backgroundRepeat: 'repeat',
+    //     paddingLeft: '0',
+    //     paddingRight: '0',
+    //     width: '100%'
+    // },
+
 import BackgroundImage from './HeaderBlueLight.png';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -22,6 +36,7 @@ const styles = {
         paddingRight: '0',
         width: '100%'
     },
+
     searchBar: {
         paddingTop: '50px',
         textSize: '36px',
@@ -83,9 +98,13 @@ class ContactsListPage extends React.Component {
             )
         }
         return (
+
+            <div className="contact-list-page">
+                <div className="contact-list-page-bg"> </div>
             <div>
                 <ContactsListPageNav />
                 <div className={this.props.classes.background}>
+
                     <Grid container
                         justify="center"
                         alignItems="center"
@@ -98,6 +117,14 @@ class ContactsListPage extends React.Component {
                             onChange={this.onInputChange}
                             value={this.state.searchQuery}>
                         </Input>
+                    </Grid>
+
+                    <Grid container
+                        className={this.props.classes.list}
+                        direction="column"
+                        justify="space-evenly"
+                        alignItems="center">
+                        {displayList}
                     </Grid>
                     <Table size="small" aria-label="contact table" className={this.props.classes.table}
                         fixedHeader={false} style={{ width: "auto", tableLayout: 'auto' }}>
