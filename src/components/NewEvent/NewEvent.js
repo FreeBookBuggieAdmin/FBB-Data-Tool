@@ -152,7 +152,6 @@ class NewEvent extends Component {
             <div className="new-event-page">
                 <div className="new-event-page-bg"></div>
                 <Grid className={this.props.classes.container}
-
                     container
                     direction="column"
                     justify="center"
@@ -166,7 +165,7 @@ class NewEvent extends Component {
                     >
                         {/* <div onClick={this.populateInputs}> */}
                             <h1 className="new-event-styles">Add an Event</h1>
-                        {/* </div> */}
+                        
                         <Paper elevation={5}>
                             <span className={this.props.classes.line}>
 
