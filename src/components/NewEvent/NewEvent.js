@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import NewEventNav from './NewEventNav'
+// import Nav from '../Nav/Nav';
+// import NewEventNav from './NewEventNav'
 import './NewEventStyle.css';
 
 // Material UI imports
@@ -148,11 +149,9 @@ class NewEvent extends Component {
         );
 
         return (
-            <>
-
-                <NewEventNav />
+            <div className="new-event-page">
+                <div className="new-event-page-bg"></div>
                 <Grid className={this.props.classes.container}
-
                     container
                     direction="column"
                     justify="center"
@@ -166,7 +165,7 @@ class NewEvent extends Component {
                     >
                         {/* <div onClick={this.populateInputs}> */}
                             <h1 className="new-event-styles">Add an Event</h1>
-                        {/* </div> */}
+                        
                         <Paper elevation={5}>
                             <span className={this.props.classes.line}>
 
@@ -299,7 +298,7 @@ class NewEvent extends Component {
                         </Paper>
                     </Grid>
                 </Grid>
-            </>
+            </div>
         )
     }
 }

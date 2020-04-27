@@ -5,14 +5,14 @@ footer {
     margin: -68px 0 0 255px;
     position: absolute;
     left: 0px;
-    top: 350px;
+    top: 450px;
     z-index: -1;
 }
 .footer-copy {
-    left: 0px;
-    margin: 125px 0 0 450px;
     z-index: -1;
+    margin-top: 250px;
+    text-align: center;
 }
-.footer-total{
-  margin-bottom: -300%;
-}
+/* .footer-total{
+  margin-bottom: 0px;
+} */

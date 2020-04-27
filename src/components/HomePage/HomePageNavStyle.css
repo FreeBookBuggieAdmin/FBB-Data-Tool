@@ -1,4 +1,4 @@
-.nav-title {
+/* .nav-title {
   font-size: 40px;
   font-weight: 740;
   display: inline-block;
@@ -44,8 +44,6 @@
   justify-content: flex-end;
   align-items: flex-end;
   transition: all 0.18s ease-in-out;
-  /* these last two make the logout button in
-  the nav bar look like another link */
   border: none;
   cursor: pointer;
   outline: 0;
@@ -106,4 +104,4 @@
 .volunteer-button-div {
   text-align: center;
   padding-top: 75px;
-}
+} */

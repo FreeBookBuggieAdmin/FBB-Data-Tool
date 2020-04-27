@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import HomePageNav from './HomePageNav'
+// import HomePageNav from './HomePageNav'
 import Footer from '../Footer/Footer'
 
 
 const UserPage = (props) => (
   <>
-    <HomePageNav />
+    {/* <HomePageNav /> */}
 
     <div className="volunteer-button-div">
       

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import VolunteerEventNav from './VolunteerEventNav';
+// import VolunteerEventNav from './VolunteerEventNav';
 import './VolunteerEvent.css';
 
 // Material UI imports
 import {
     withStyles,
     Button,
+    Grid,
     Paper,
     TextField,
     Select,
@@ -186,14 +187,23 @@ class volunteerEvent extends Component {
             </>
 
         return (
-            <>
-                <VolunteerEventNav />
-                
+            <div className="new-event-page">
                 <h1
                     className="new-event-styles"
                     align="center">Add Books By Event</h1>
-
-
+                <div className="new-event-page-bg"></div>
+                <Grid className={this.props.classes.container}
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                >
+                    <Grid
+                        container
+                        className={this.props.classes.form}
+                        item lg={4}
+                        justify="center"
+                    >
                 <Paper
                     elevation={5}
                     disableTypography={true}
@@ -268,15 +278,16 @@ class volunteerEvent extends Component {
                                 </Button>
                     </span>
                 </Paper>
-                
+            </Grid>
+        </Grid>
                 <Button
                     className={this.props.classes.button}
                     variant="contained"
                     color="primary"
                     onClick={() => this.props.history.push('/home')}>
                     Home</Button>
-                
-            </>
+            </div>
+            
         )
     }
 }

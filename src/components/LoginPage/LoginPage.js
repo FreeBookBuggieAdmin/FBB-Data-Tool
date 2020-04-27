@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LoginMiniChart from '../LoginMiniChart/LoginMiniChart';
-import LoginPageNav from './LoginPageNav'
+// import LoginPageNav from './LoginPageNav'
 //material UI imports
 import { createMuiTheme } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab'
@@ -54,7 +54,7 @@ class LoginPage extends Component {
       
       <>
         
-        <LoginPageNav/>
+        {/* <LoginPageNav/> */}
         <BookCountUp/>
         <div>
           {this.props.errors.loginMessage && (

@@ -10,7 +10,7 @@ import {
 }
     from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import NewOrganizationNav from './NewOrganizationNav'
+// import NewOrganizationNav from './NewOrganizationNav';
 import './NewOrganizationStyles.css';
 
 
@@ -184,8 +184,9 @@ class NewOrganization extends Component {
     render() {
         let org = this.state.newEntry
         return (
-            <>
-                <NewOrganizationNav />
+            <div className="org-list-page">
+                <div className="org-list-page-bg"></div>
+                {/* <NewOrganizationNav /> */}
                 <Grid className={this.props.classes.container}
                     container
                     direction="column"
@@ -451,10 +452,8 @@ class NewOrganization extends Component {
                         Add
                     </Button>
                     <br />
-
                 </Grid>
-
-            </>
+            </div>
         )
     }
 }
