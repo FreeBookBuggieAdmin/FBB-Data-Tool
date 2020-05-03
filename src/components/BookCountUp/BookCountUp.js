@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 //importing components for animated countup
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -22,9 +23,7 @@ class BookCountUp extends Component {
             <>
 
             <div className="counter-div">
-                <h1 className="counter-style"
-                // font-size= "200%"
-                >
+                <h1 className="counter-style">
                     <CountUp
                         start={0}
                         end={Number(this.props.reduxStore.bookCountReducer[1].sum)}

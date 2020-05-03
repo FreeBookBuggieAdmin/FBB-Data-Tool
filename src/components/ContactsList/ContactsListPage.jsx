@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Input from '@material-ui/core/Input';
 import ContactsListItem from '../ContactsListItem/ContactsListItem';
 
-import { withStyles, Grid } from '@material-ui/core';
-
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-
+import { withStyles, 
+    Grid,
+    Input,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
+ } from '@material-ui/core';
 
 const styles = {
 
@@ -19,7 +19,6 @@ const styles = {
         textSize: '36px',
         fontFamily: 'Museo Slab',
         opacity: '1'
-
     },
     input: {
         justify: 'center',
@@ -41,6 +40,7 @@ const styles = {
         paddingRight: '25px'
     }
 }
+
 class ContactsListPage extends React.Component {
 
     state = {

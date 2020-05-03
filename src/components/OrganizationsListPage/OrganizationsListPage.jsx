@@ -2,26 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Input from '@material-ui/core/Input';
 import OrganizationsListItem from '../OrganizationsListItem/OrganizationsListItem'
-// import OrganizationListPageNav from '../OrganizationsListPage/OrganizationListPageNav'
-import { withStyles, Grid } from '@material-ui/core'
 
-// import BackgroundImage from './HeaderPurpleLight.png'
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import { 
+    withStyles, 
+    Grid,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow
+ } 
+    from '@material-ui/core'
 
 const styles = {
-    background: {
-        // backgroundImage: `url(${BackgroundImage})`,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'repeat',
-        backgroundPosition: '100% 100%',
-        paddingLeft: '0',
-        paddingRight: '0',
-        width: '100%'
-    },
+    
     searchBar: {
         paddingTop: '50px',
         textSize: '36px',
