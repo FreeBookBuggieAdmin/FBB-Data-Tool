@@ -5,7 +5,7 @@ import OrganizationsListItem from '../OrganizationsListItem/OrganizationsListIte
 // import OrganizationListPageNav from '../OrganizationsListPage/OrganizationListPageNav'
 import { withStyles, Grid } from '@material-ui/core'
 
-import BackgroundImage from './HeaderPurpleLight.png'
+// import BackgroundImage from './HeaderPurpleLight.png'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -127,7 +127,6 @@ class OrganizationsListPage extends React.Component {
                         </TableBody>
                     </Table>
                 </div>
-            </div>
         )
     }
 }

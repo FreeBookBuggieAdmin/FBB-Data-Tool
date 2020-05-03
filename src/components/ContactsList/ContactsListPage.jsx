@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Input from '@material-ui/core/Input';
 import ContactsListItem from '../ContactsListItem/ContactsListItem';
-import ContactsListPageNav from '../ContactsList/ContactListNav';
+// import ContactsListPageNav from '../ContactsList/ContactListNav';
 import { withStyles, Grid } from '@material-ui/core';
 
 // import ContactListNav from './ContactListNav';
 // import BackgroundImage from './HeaderBlueLight.png'
 
 
-const styles = {
+// const styles = {
     // background: {
     //     backgroundImage: `url(${BackgroundImage})`,
     //     backgroundRepeat: 'repeat',
@@ -18,7 +18,7 @@ const styles = {
     //     width: '100%'
     // },
 
-import BackgroundImage from './HeaderBlueLight.png';
+// import BackgroundImage from './HeaderBlueLight.png';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -27,15 +27,15 @@ import TableRow from '@material-ui/core/TableRow';
 
 
 const styles = {
-    background: {
-        backgroundImage: `url(${BackgroundImage})`,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'repeat',
-        backgroundPosition: '100% 100%',
-        paddingLeft: '0',
-        paddingRight: '0',
-        width: '100%'
-    },
+    // background: {
+    //     backgroundImage: `url(${BackgroundImage})`,
+    //     backgroundSize: 'contain',
+    //     backgroundRepeat: 'repeat',
+    //     backgroundPosition: '100% 100%',
+    //     paddingLeft: '0',
+    //     paddingRight: '0',
+    //     width: '100%'
+    // },
 
     searchBar: {
         paddingTop: '50px',
@@ -102,7 +102,7 @@ class ContactsListPage extends React.Component {
             <div className="contact-list-page">
                 <div className="contact-list-page-bg"> </div>
             <div>
-                <ContactsListPageNav />
+                {/* <ContactsListPageNav /> */}
                 <div className={this.props.classes.background}>
 
                     <Grid container
@@ -144,6 +144,7 @@ class ContactsListPage extends React.Component {
                         </TableBody>
                     </Table>
                 </div>
+            </div>
             </div>
         )
     }
