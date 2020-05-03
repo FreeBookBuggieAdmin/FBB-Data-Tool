@@ -13,15 +13,15 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 const styles = {
-    // background: {
-    //     backgroundImage: `url(${BackgroundImage})`,
-    //     backgroundSize: 'contain',
-    //     backgroundRepeat: 'repeat',
-    //     backgroundPosition: '100% 100%',
-    //     paddingLeft: '0',
-    //     paddingRight: '0',
-    //     width: '100%'
-    // },
+    background: {
+        // backgroundImage: `url(${BackgroundImage})`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'repeat',
+        backgroundPosition: '100% 100%',
+        paddingLeft: '0',
+        paddingRight: '0',
+        width: '100%'
+    },
     searchBar: {
         paddingTop: '50px',
         textSize: '36px',
