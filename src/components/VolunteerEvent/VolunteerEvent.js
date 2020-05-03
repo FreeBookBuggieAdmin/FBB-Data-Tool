@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import VolunteerEventNav from './VolunteerEventNav';
-import './VolunteerEvent.css';
 
 // Material UI imports
 import {

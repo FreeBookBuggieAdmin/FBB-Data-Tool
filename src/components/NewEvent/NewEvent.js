@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import Nav from '../Nav/Nav';
-// import NewEventNav from './NewEventNav'
-import './NewEventStyle.css';
 
 // Material UI imports
 import {

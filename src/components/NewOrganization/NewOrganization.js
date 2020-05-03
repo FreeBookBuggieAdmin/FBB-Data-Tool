@@ -7,11 +7,9 @@ import {
     FormControl,
     Paper,
     Select,
+    withStyles
 }
     from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-// import NewOrganizationNav from './NewOrganizationNav';
-import './NewOrganizationStyles.css';
 
 
 const styles = theme => ({
@@ -448,7 +446,8 @@ class NewOrganization extends Component {
                     <Button className={this.props.classes.submitButton}
                         onClick={this.handleClick}
                         size={'large'}
-                        variant={'outlined'}>
+                        variant={'contained'}
+                        color="primary">
                         Add
                     </Button>
                     <br />

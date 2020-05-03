@@ -3,7 +3,6 @@ import { Bar } from 'react-chartjs-2';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { connect } from 'react-redux';
 import CsvDownloader from 'react-csv-downloader';
-import './DataReportingStyle.css';
 
 class DataReporting extends Component {
 

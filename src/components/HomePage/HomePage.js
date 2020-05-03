@@ -1,13 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import HomePageNav from './HomePageNav'
 import Footer from '../Footer/Footer'
 
 
 const UserPage = (props) => (
   <>
-    {/* <HomePageNav /> */}
-
     <div className="volunteer-button-div">
       
       <center >
