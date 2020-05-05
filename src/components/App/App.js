@@ -19,7 +19,7 @@ import NewEvent from '../NewEvent/NewEvent';
 import VolunteerEvent from '../VolunteerEvent/VolunteerEvent'
 import registerPage from '../RegisterPage/RegisterPage';
 import EditEvents from '../EditEvents/EditEvents';
-
+import Nav from '../Nav/Nav';
 
 import './App.css';
 
@@ -33,9 +33,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          {/* <Nav /> */}
-
+        {/* <div> */}
+          <Nav />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
@@ -53,7 +52,7 @@ class App extends Component {
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
-             <ProtectedRoute
+            <ProtectedRoute
               exact
               path="/registerPage"
               component={registerPage}
@@ -102,7 +101,7 @@ class App extends Component {
             <Route render={() => <h1>404</h1>} />
           </Switch>
           
-        </div>
+        {/* </div> */}
       </Router>
     )
   }

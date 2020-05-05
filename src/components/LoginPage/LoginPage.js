@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LoginMiniChart from '../LoginMiniChart/LoginMiniChart';
-import LoginPageNav from './LoginPageNav'
-//material UI imports
 import { createMuiTheme } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab'
 import BookCountUp from '../BookCountUp/BookCountUp';
-
-
-
 
 const theme = createMuiTheme({
   palette: {
@@ -53,8 +48,6 @@ class LoginPage extends Component {
     return (
       
       <>
-        
-        <LoginPageNav/>
         <BookCountUp/>
         <div>
           {this.props.errors.loginMessage && (
@@ -109,10 +102,7 @@ class LoginPage extends Component {
                 Log In
                 </Fab>
             </div>
-            
           </div>
-          
-          
         </div>
         <br/>
       </>

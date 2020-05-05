@@ -4,6 +4,89 @@ body {
     background-attachment: fixed;
 }
 
+.contact-list-page {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-list-page .contact-list-page-bg {
+  background: url('./HeaderBlue.png');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: round;
+}
+
+.org-list-page {
+  position: relative;
+  z-index: 1;
+}
+
+.org-list-page .org-list-page-bg {
+  background: url('./HeaderPurple.png');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: round;
+}
+
+.data-reporting-styles {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(29, 114, 35);
+  font-family: "Museo Slab";
+  
+}
+
+.new-event-page {
+  position: relative;
+  z-index: 1;
+}
+
+.new-event-page .new-event-page-bg {
+  background: url('./HeaderPink.png');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: round;
+}
+
+.new-event-styles {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(29, 114, 35);
+  font-family: "Museo Slab";
+}
+
+/* .data-reporting-page {
+  position: relative;
+  z-index: 1;
+} */
+
+/* .data-reporting-page .chart-dashboard {
+  background: url('./HeaderOrange.png');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: round;
+} */
+
 .alert {
     background-color: #ff4545;
     margin: 50px;
@@ -187,3 +270,13 @@ input {
 .registrationDiv {
   background-color: white;
 }
+
+.welcome-message-div {
+  text-align: center;
+}
+
+.volunteer-button-div{
+  margin-top: 20px;
+  margin-left: -30px;
+}
+

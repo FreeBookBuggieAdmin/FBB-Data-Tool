@@ -3,6 +3,10 @@ table, th, td {
     text-align: center;
 }
 
-.eventTitle {
-    width: 200px
+.container {
+    margin: 20px
+}
+
+.notesColumn {
+    width: 160px
 }

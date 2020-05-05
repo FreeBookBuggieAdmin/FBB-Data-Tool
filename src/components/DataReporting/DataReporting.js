@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { connect } from 'react-redux';
-
 import CsvDownloader from 'react-csv-downloader';
-
-import DataReportingNav from './DataReportingNav';
-import './DataReportingStyle.css';
 
 class DataReporting extends Component {
 
@@ -143,8 +139,7 @@ class DataReporting extends Component {
             )
         } else {
             return (
-                <>
-                    <DataReportingNav />
+                <div className="data-reporting-page">
                     <div>
                         <h1 className="data-reporting-styles" >Craft Your Story</h1>
                     </div>
@@ -221,7 +216,7 @@ class DataReporting extends Component {
                             }}
                         />
                     </div>
-                </>
+                </div>
             )
         }
     }

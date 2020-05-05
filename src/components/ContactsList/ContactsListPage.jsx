@@ -1,33 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Input from '@material-ui/core/Input';
 import ContactsListItem from '../ContactsListItem/ContactsListItem';
-import ContactsListPageNav from '../ContactsList/ContactListNav';
-import { withStyles, Grid } from '@material-ui/core';
-import BackgroundImage from './HeaderBlueLight.png';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 
+import { withStyles, 
+    Grid,
+    Input,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
+ } from '@material-ui/core';
 
 const styles = {
-    background: {
-        backgroundImage: `url(${BackgroundImage})`,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'repeat',
-        backgroundPosition: '100% 100%',
-        paddingLeft: '0',
-        paddingRight: '0',
-        width: '100%'
-    },
+
     searchBar: {
         paddingTop: '50px',
         textSize: '36px',
         fontFamily: 'Museo Slab',
         opacity: '1'
-
     },
     input: {
         justify: 'center',
@@ -49,6 +40,7 @@ const styles = {
         paddingRight: '25px'
     }
 }
+
 class ContactsListPage extends React.Component {
 
     state = {
@@ -83,9 +75,13 @@ class ContactsListPage extends React.Component {
             )
         }
         return (
+
+            <div className="contact-list-page">
+                <div className="contact-list-page-bg"> </div>
             <div>
-                <ContactsListPageNav />
+                {/* <ContactsListPageNav /> */}
                 <div className={this.props.classes.background}>
+
                     <Grid container
                         justify="center"
                         alignItems="center"
@@ -98,6 +94,14 @@ class ContactsListPage extends React.Component {
                             onChange={this.onInputChange}
                             value={this.state.searchQuery}>
                         </Input>
+                    </Grid>
+
+                    <Grid container
+                        className={this.props.classes.list}
+                        direction="column"
+                        justify="space-evenly"
+                        alignItems="center">
+                        {displayList}
                     </Grid>
                     <Table size="small" aria-label="contact table" className={this.props.classes.table}
                         fixedHeader={false} style={{ width: "auto", tableLayout: 'auto' }}>
@@ -117,6 +121,7 @@ class ContactsListPage extends React.Component {
                         </TableBody>
                     </Table>
                 </div>
+            </div>
             </div>
         )
     }

@@ -25,7 +25,7 @@ class EditEvents extends Component {
         // console.log('events:', this.props.reduxStore.events)
 
         return(
-            <>
+            <div className='container'>
                 <h1>Edit Events</h1>
                 <table>
                     <thead>
@@ -41,7 +41,7 @@ class EditEvents extends Component {
                             <th>Number of Children</th>
                             <th>Location</th>
                             <th>Volunteers</th>
-                            <th>Notes</th>
+                            <th className='notesColumn'>Notes</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -54,7 +54,7 @@ class EditEvents extends Component {
                         })}
                     </tbody>
                 </table>
-            </>
+            </div>
         )
     }
 

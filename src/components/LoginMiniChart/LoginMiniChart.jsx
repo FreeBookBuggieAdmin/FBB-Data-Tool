@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Bar } from 'react-chartjs-2';
 
-
-
 class LoginMiniChart extends Component {
 
     componentDidMount() {
@@ -49,8 +47,8 @@ class LoginMiniChart extends Component {
 )}}
 
 
-    const mapStateToProps = (reduxStore) => ({
+const mapStateToProps = (reduxStore) => ({
     reduxStore
-    })
+})
 
 export default connect(mapStateToProps)(LoginMiniChart)

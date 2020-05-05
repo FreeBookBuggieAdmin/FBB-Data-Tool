@@ -9,12 +9,11 @@ import {
     Select,
     Dialog,
     DialogActions,
-    DialogTitle
+    DialogTitle,
+    TableCell,
+    TableRow,
 }
     from '@material-ui/core';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
-
 
 const styles = theme => ({
     row: {
